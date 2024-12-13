@@ -1,0 +1,190 @@
+ 
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.titulo {
+  background-color: rgba(119, 141, 169, 0.3); /* 0.5 significa 50% de opacidad */
+
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  color: white;
+  margin-bottom: .5em;
+}
+.area1{
+  width: 250px;
+  resize: none;             
+  padding: 10px;           
+  font-size: 16px;          
+  border: 2px solid #778DA9;   
+  border-radius: 8px;      
+  box-sizing: border-box;  
+  background-color: rgba(33, 37, 41, 0.5);  
+  color: white;
+}
+
+ .area{
+  width: 300px;            /* Ancho fijo */
+  height: 400px;           /* Altura fija */
+  resize: none;            /* Deshabilita el redimensionamiento */
+  padding: 10px;           /* Espaciado interno */
+  font-size: 16px;         /* Tamaño de la fuente */
+  border: 2px solid #778DA9;  /* Borde con color personalizado */
+  border-radius: 8px;      /* Bordes redondeados */
+  box-sizing: border-box;  /* Incluye el borde y el padding en el tamaño total */
+  background-color: rgba(33, 37, 41, 0.5);  
+  color: white;
+ }
+ .article{
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+ 
+ }
+.container1, .container2, .container3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  box-sizing: border-box;
+}
+.subtitle{
+  font-size: 2em;
+  font-weight: bold;
+}
+.boton{
+  background-color: rgba(119, 141, 169, 0.6);
+  color: white;
+}
+.container_buton{
+  display: flex;
+  flex-direction: row;
+  padding-top: 1em;
+  justify-content: space-around;
+}
+
+/*ESTILOS DEL ARBOL DE PARSING*/
+
+/* Contenedor principal del árbol */
+.tree-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+/* Nodo individual */
+
+/*DEFAULT*/
+/*
+.tree-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+*/
+.tree-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Estilo para el valor de cada nodo */
+.node-value {
+  background-color: rgba(119, 141, 169, 0.6); 
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Conexión entre nodos */
+/*
+.children {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 20px;
+}
+*/
+
+.children {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+/* Líneas de conexión entre el nodo padre e hijos */
+.tree-node::before,
+.tree-node::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 20px;
+  width: 2px;
+}
+
+.tree-node::before {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.children .left::after,
+.children .right::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: black;
+  height: 20px;
+}
+
+.left {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Líneas diagonales hacia los hijos */
+.children .left::after {
+  top: -10px;
+  right: 50%;
+  transform: rotate(45deg);
+  transform-origin: top right;
+}
+
+.children .right::after {
+  top: -10px;
+  left: 50%;
+  transform: rotate(-45deg);
+  transform-origin: top left;
+}
