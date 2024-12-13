@@ -12,4 +12,6 @@ Las expresiones que puede analizador son de este tipo:
 - float pi = 3.14;
 - char c = 'a';
 - a[2*i] = a[i] + 2*i
+- a= a(b*c/d);
+- a * 34 + (23/9)
 
